@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Islamic Green Theme */
+    --background: 140 30% 98%;
+    --foreground: 150 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 50% 10%;
+
+    /* Deep Islamic Green */
+    --primary: 150 60% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light green surface */
+    --secondary: 145 40% 94%;
+    --secondary-foreground: 150 60% 20%;
+
+    --muted: 140 20% 94%;
+    --muted-foreground: 150 20% 40%;
+
+    /* Golden Orange accent */
+    --accent: 35 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Red for destructive */
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 30% 88%;
+    --input: 145 30% 88%;
+    --ring: 150 60% 22%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --gold: 35 90% 50%;
+    --gold-light: 38 100% 95%;
+    --emerald: 150 60% 22%;
+    --emerald-light: 145 40% 94%;
+    --ruby: 0 70% 45%;
+
+    /* Sidebar */
+    --sidebar-background: 150 60% 22%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 35 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 50% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 150 40% 30%;
+    --sidebar-ring: 35 90% 50%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 140 20% 95%;
+
+    --card: 150 30% 12%;
+    --card-foreground: 140 20% 95%;
+
+    --popover: 150 30% 12%;
+    --popover-foreground: 140 20% 95%;
+
+    --primary: 145 50% 45%;
+    --primary-foreground: 150 50% 10%;
+
+    --secondary: 150 30% 18%;
+    --secondary-foreground: 140 20% 90%;
+
+    --muted: 150 20% 20%;
+    --muted-foreground: 140 15% 60%;
+
+    --accent: 35 85% 55%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 22%;
+    --input: 150 20% 22%;
+    --ring: 145 50% 45%;
+
+    --sidebar-background: 150 40% 10%;
+    --sidebar-foreground: 140 20% 95%;
+    --sidebar-primary: 35 85% 55%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 150 30% 18%;
+    --sidebar-accent-foreground: 140 20% 95%;
+    --sidebar-border: 150 20% 22%;
+    --sidebar-ring: 35 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary/80;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(38, 100%, 60%) 100%);
+  }
+
+  .islamic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23166534' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(38, 100%, 60%) 100%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
