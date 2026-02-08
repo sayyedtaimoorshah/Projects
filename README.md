@@ -1,2 +1,2 @@
 # Projects
-A structured collection of my web development journey, ranging from fundamental concepts to professional-grade applications.
+A structured collection of my development journey, ranging from fundamental concepts to professional-grade applications.
