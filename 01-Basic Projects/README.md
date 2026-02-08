@@ -1,0 +1,1 @@
+This folder serves as the foundation of my web development journey. Every project here focuses on mastering of web: HTML5, CSS3, and Vanilla JavaScript.
