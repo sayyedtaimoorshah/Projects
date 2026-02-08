@@ -1,0 +1,1 @@
+This directory contains projects that focus on dynamic data, state management, and asynchronous programming. These projects demonstrate my ability to handle complex logic beyond basic UI.
